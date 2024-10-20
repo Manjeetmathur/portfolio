@@ -5,6 +5,9 @@ import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 const ImgContent = () => {
+  const handleDownLoad = () => {
+    alert("Resume Not uploaded . . . ")
+  }
   return (
     <div className="slide-left ">
       <div className="p-10 bg-[#fffefe] flex items-center flex-col  md:flex-row-reverse md:justify-center md:gap-32 ">
@@ -32,7 +35,7 @@ const ImgContent = () => {
         </div>
       </div>
       <div className="bg-[#fffefe] flex place-content-center pb-8">
-        <button className="btn">Download Resume</button>
+        <button className="btn" onClick={handleDownLoad}>Download Resume</button>
       </div>
       <div className="bg-[#fffefe] flex place-content-center gap-5 pb-8">
         <a
