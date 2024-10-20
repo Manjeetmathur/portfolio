@@ -35,17 +35,20 @@ const ImgContent = () => {
         <button className="btn">Download Resume</button>
       </div>
       <div className="bg-[#fffefe] flex place-content-center gap-5 pb-8">
-        <a href="" className="btn text-2xl">
-        <CiLinkedin />
+        <a
+          href="https://www.linkedin.com/in/manjeet-kumar628?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          className="btn text-2xl"
+        >
+          <CiLinkedin />
         </a>
         <a href="https://github.com/Manjeetmathur" className="btn text-2xl">
-        <FaGithub />
+          <FaGithub />
         </a>
-        <a href="" className="btn text-2xl">
-        <FaInstagram />
+        <a href="https://www.instagram.com/me_with_manjeet/" className="btn text-2xl">
+          <FaInstagram />
         </a>
-        <a href="" className="btn text-2xl">
-        <CiFacebook />
+        <a href="https://www.facebook.com/profile.php?id=100091275197682&ref=xav_ig_profile_web" className="btn text-2xl">
+          <CiFacebook />
         </a>
       </div>
     </div>
