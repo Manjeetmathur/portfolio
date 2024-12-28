@@ -1,5 +1,4 @@
 import React from 'react'
-import p10 from '../../image/p10.jpg'
 const Footer = () => {
   return (
     <div className="from-gray-900 via-gray-950 to-gray-900 

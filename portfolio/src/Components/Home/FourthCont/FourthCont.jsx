@@ -1,11 +1,4 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
-import p6 from "../../../image/p9.jpg";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { url } from "../../../backendUrl/Backendurl";
-import toast from "react-hot-toast";
-import { postsData } from "../../../store/postSlice";
 import AOS from "aos";
 import 'aos/dist/aos.css'
 import { context } from "../../../Context/Context";

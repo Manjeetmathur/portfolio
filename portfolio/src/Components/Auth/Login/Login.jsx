@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import p4 from '../../../image/p4.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import { url } from '../../../backendUrl/Backendurl';
 import { useDispatch } from 'react-redux';
-import { login, logout } from '../../../store/authSlice';
+import { login } from '../../../store/authSlice';
 import Header from '../../Header/Header';
 const Login = () => {
 

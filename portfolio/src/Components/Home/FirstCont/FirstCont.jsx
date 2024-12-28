@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react'
 import { FaLongArrowAltRight } from "react-icons/fa";
-import p5 from '../../../image/p5.jpg'
 import { Link } from 'react-router-dom';
 const FirstCont = () => {
   const targetRef = useRef(null);
@@ -10,6 +9,10 @@ const FirstCont = () => {
   };
   return (
     <div className="bg-gray-950 py-24 md:py-28 lg:py-36 flex flex-col items-center justify-center animate-fade-in">
+
+      <div class="absolute w-[2px] h-1 bg-blue-500 rounded-full point"></div>
+      <div class="absolute w-[2px] h-1  bg-blue-500 rounded-full point1"></div>
+
       <div className="text-center w-full">
         <h1 className="text-xl md:text-4xl lg:text-6xl font-semibold text-white animate-slide-up ">
           Make Your Own Portfolio

@@ -3,7 +3,7 @@ import { FaEdit, FaHandMiddleFinger } from 'react-icons/fa'
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { GiCancel } from 'react-icons/gi'
 import { context } from '../../Context/Context'
-import { TiDelete, TiTick } from "react-icons/ti";
+import {TiTick } from "react-icons/ti";
 import { Link } from 'react-router-dom';
 import { FaLink } from "react-icons/fa";
 const ProfilePost = ({ post }) => {

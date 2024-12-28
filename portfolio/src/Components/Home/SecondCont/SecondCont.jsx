@@ -1,10 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
-import p4 from "../../../image/p4.jpg";
-import toast from "react-hot-toast";
-import p3 from "../../../image/p3.jpg";
-import { url } from "../../../backendUrl/Backendurl";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { context } from "../../../Context/Context";

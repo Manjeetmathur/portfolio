@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   FaEnvelope,
   FaFacebook,
-  FaGit,
   FaGithub,
   FaInstagram,
   FaLinkedin,
@@ -16,7 +14,6 @@ import toast from "react-hot-toast";
 import { url } from "../../../../backendUrl/Backendurl";
 import axios from "axios";
 import Temp1Blogs from "./Temp1Blogs";
-import Header from "../../../Header/Header";
 import Temp1Header from "./Temp1Header";
 const Template1 = () => {
 

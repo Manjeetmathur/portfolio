@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
+import p13 from "../../image/p13.png";
+import p14 from "../../image/p14.png";
+import p15 from "../../image/p15.png";
 
 const FrontInterface = () => {
        const {userData} = useSelector(st => st.auth)
@@ -22,13 +25,13 @@ const FrontInterface = () => {
 
                                    {/* //tempplate 1 */}
                                    <Link to={`/template1/${userData?.id}`}>
-                                          <div className="  h-[200px] w-[270px] md:w-[230px] border-2 m-3 rounded-lg templateimg"></div>
+                                          <img src={p13} className="  h-[200px] w-[270px] md:w-[230px] border-2 m-3 rounded-lg "></img>
                                    </Link>
                                    <Link to={`/template2/${userData?.id}`}>
-                                          <div className="  h-[200px] w-[270px] md:w-[230px] border-2 m-3 rounded-lg templateimg"></div>
+                                          <img  src={p14} className="  h-[200px] w-[270px] md:w-[230px] border-2 m-3 rounded-lg "></img>
                                    </Link>
                                    <Link to={`/template3/${userData?.id}`}>
-                                          <div className="  h-[200px] w-[270px] md:w-[230px] border-2 m-3 rounded-lg templateimg"></div>
+                                          <img src={p15} className=" h-[200px] w-[270px] md:w-[230px] border-2 m-3 rounded-lg "></img>
                                    </Link>
                             </div>
                      </div>
