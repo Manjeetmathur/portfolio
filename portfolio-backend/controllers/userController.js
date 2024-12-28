@@ -221,8 +221,11 @@ const updateResume = async (req, res) => {
   }
 }
 const updateImage = async (req, res) => {
+  console.log("hi");
+  
   const userId = req._id
-
+  console.log(userId);
+  
   try {
     const user = await User.findById(userId)
 
@@ -265,7 +268,7 @@ const updateImage = async (req, res) => {
 
   } catch (error) {
     res.json({
-      message: error.message,
+      message: "heelooo" + error.message,
     })
   }
 }

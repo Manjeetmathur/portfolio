@@ -4,14 +4,15 @@ import fs from "fs"
 import multer from "multer"
 
 const storage = multer.diskStorage({
-       destination : (req,file,cb) => cb(null,"./public/temp/"),
+       destination : (req,file,cb) => cb(null,"../portfolio/portfolio-backend/public/temp/"),
        filename : (req,file,cb) => {
-              const date = new Date();
+              console.log(file);
+              
               cb(null,file.originalname)
        }
 })
 
-export const upload = multer({storage : storage})
+export const upload = multer({storage})
 
 cloudinary.config({
        cloud_name : "dtwftajii",
@@ -20,8 +21,6 @@ cloudinary.config({
 })
 
 const uploadOnCloudinary = async(path) => {
-       // console.log(path);
-       
        try {
               if(!path){
                      return null
@@ -32,7 +31,7 @@ const uploadOnCloudinary = async(path) => {
               })
               // console.log(response);
               
-              fs.unlinkSync(path)
+              // fs.unlinkSync(path)
               return response
 
        } catch (error) {

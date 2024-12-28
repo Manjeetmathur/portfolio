@@ -99,7 +99,26 @@ const ContextProvider = ({ children }) => {
                      toast.error(error.message);
               }
        };
-
+       const updateResume = async (resume) => {
+              const formData = new FormData();
+              formData.append("resume", resume);
+              try {
+                     const data = await axios.patch(`${url}/user/update-resume`, formData, {
+                            headers: { "Content-Type": "multipart/form-data" },
+                            withCredentials: true,
+                            withXSRFToken: true,
+                     });
+                     const res = data.data;
+                     console.log(res);
+                     if (res.success) {
+                            toast.success(res.message);
+                     } else {
+                            toast.error(res.message);
+                     }
+              } catch (error) {
+                     toast.error(error.message);
+              }
+       };
        //update Title
        const updateTitle = async (title) => {
               const userTitle = title;
@@ -128,26 +147,7 @@ const ContextProvider = ({ children }) => {
               }
        };
 
-       const updateResume = async (resume) => {
-              const formData = new FormData();
-              formData.append("resume", resume);
-              try {
-                     const data = await axios.patch(`${url}/user/update-resume`, formData, {
-                            headers: { "Content-Type": "multipart/form-data" },
-                            withCredentials: true,
-                            withXSRFToken: true,
-                     });
-                     const res = data.data;
-                     console.log(res);
-                     if (res.success) {
-                            toast.success(res.message);
-                     } else {
-                            toast.error(res.message);
-                     }
-              } catch (error) {
-                     toast.error(error.message);
-              }
-       };
+       
 
        const updateProfession = async (profession) => {
               try {

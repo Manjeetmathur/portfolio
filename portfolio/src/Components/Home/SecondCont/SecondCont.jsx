@@ -31,13 +31,6 @@ const SecondCont = () => {
        }
        console.log(profile);
 
-       const profileUpdate = () => {
-              setLoading1(true)
-              updateProfile(profile)
-              setLoading1(false)
-              setProfile("")
-       }
-
        useEffect(() => {
               // Initialize AOS animation
               AOS.init({

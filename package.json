@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon -r dotenv/config --experimental-json-modules portfolio-backend/index.js",
-    "build":"npm install && npm install --prefix portfolio && npm run build --prefix portfolio"
+    "build": "npm install && npm install --prefix portfolio && npm run build --prefix portfolio"
   },
   "author": "manjeet mathur",
   "license": "ISC",
