@@ -4,7 +4,7 @@ import fs from "fs"
 import multer from "multer"
 
 const storage = multer.diskStorage({
-       destination : (req,file,cb) => cb(null,"../Your-Port/portfolio-backend/public/temp/"),
+       destination : (req,file,cb) => cb(null,"../portfolio/portfolio-backend/public/temp/"),
        filename : (req,file,cb) => {
               console.log(file);
               
