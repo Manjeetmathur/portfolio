@@ -10,59 +10,59 @@
   20% {
     transform: translate(80%, 20%);
     top: 20%;
-    left: 30%;
+    left: 20%;
   }
   40% {
     transform: translate(40%, 80%);
-    top: 27%;
-    left: 40%;
+    top: 30%;
+    left: 30%;
   }
   60% {
     transform: translate(90%, 90%);
-    top: 33%;
-    left: 30%;
+    top: 40%;
+    left: 40%;
   }
   80% {
     transform: translate(90%, 90%);
-    top: 37%;
-    left: 20%;
+    top: 50%;
+    left:50%;
   }
   100% {
     transform: translate(0, 0);
-    top: 46%;
-    left: 0%;
+    top: 60%;
+    left: 60%;
   }
 }
 @keyframes movePoint1 {
   0% {
     transform: translate(0, 0);
-    top: 0vw;
+    top: 0%;
     right: 0%;
   }
   20% {
     transform: translate(80%, 20%);
-    top: 20vw;
+    top: 20%;
     right: 20%;
   }
   40% {
     transform: translate(40%, 80%);
-    top: 30vw;
+    top: 30%;
     right: 30%;
   }
   60% {
     transform: translate(90%, 90%);
-    top: 40vw;
-    right: 36%;
+    top: 40%;
+    right: 40%;
   }
   80% {
     transform: translate(90%, 90%);
-    top: 47vw;
-    right: 20%;
+    top: 50%;
+    right:50%;
   }
   100% {
     transform: translate(0, 0);
-    top: 60vw;
-    right: 10%;
+    top: 60%;
+    right: 60%;
   }
 }
 
