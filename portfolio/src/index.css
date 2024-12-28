@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg1{
+       background-image: url('../image/p11.jpg');
+}
+.bg-image{
+       /* background-image: url('../src/image/p2.jpg'); */
+       background: url('https://th.bing.com/th/id/OIG1.4d14_6iEpk8y2cKiHVFM?w=1792&h=1024&rs=1&pid=ImgDetMain');
+       height: full;
+       width: 100%;
+       background-repeat: no-repeat;
+       background-size: cover;
+       background-position: center center;
+}
+.template1bg{
+       /* background-image: url('../src/image/p2.jpg'); */
+       background: url('https://th.bing.com/th/id/OIG2.jHiSrbjcjhQLXVakVqyn?w=1792&h=1024&rs=1&pid=ImgDetMain');
+       height: full;
+       width: 100%;
+       background-repeat: no-repeat;
+       background-size: cover;
+       background-position: center center;
+}
+
+.templateimg{
+       /* background-image: url('../src/image/p2.jpg'); */
+       background: url('../src/image/p12.png');
+       background-repeat: no-repeat;
+       background-size: cover;
+       background-position: center center;
+}
