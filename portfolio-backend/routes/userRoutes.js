@@ -6,7 +6,7 @@ const router = Router();
 
 router.route("/register").post(register)
 router.route("/login").post(login);
-router.route("/logout").get(verifyJwt,logout);
+router.route("/logout").get(logout);
 router.route("/upload-details").post(verifyJwt,
        upload.fields(
               [
