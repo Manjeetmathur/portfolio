@@ -65,7 +65,8 @@ const Template1 = () => {
           <img
             src={userDetails?.profile?.imageUrl}
             alt="Profile"
-            className="h-[55vw] w-[50vw] border-4 border-gray-300 rounded-full md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px]"
+            className="h-[55vw] w-[50vw] border-4 border-gray-300 rounded-full
+              object-contain md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px]"
           />
         </div>
 

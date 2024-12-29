@@ -87,7 +87,7 @@ const Template2 = () => {
                                           border-gradient-to-r from-teal-400 to-blue-500 
                                           rounded-tl-[80px] rounded-br-[80px] md:w-[300px] md:h-[300px] 
                                           lg:w-[350px] lg:h-[350px] 
-                                          object-contai shadow-lg transform hover:scale-105 
+                                          object-contain shadow-lg transform hover:scale-105 
                                           transition-all duration-300"
                                    />
                             </div>
