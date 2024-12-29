@@ -3,9 +3,10 @@ import { FaEdit, FaHandMiddleFinger } from 'react-icons/fa'
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { GiCancel } from 'react-icons/gi'
 import { context } from '../../Context/Context'
-import {TiTick } from "react-icons/ti";
+import { TiTick } from "react-icons/ti";
 import { Link } from 'react-router-dom';
 import { FaLink } from "react-icons/fa";
+import { RiExternalLinkFill } from 'react-icons/ri';
 const ProfilePost = ({ post }) => {
   const [editSec, setEditSec] = useState(false)
   const ref = useRef()
@@ -29,7 +30,9 @@ const ProfilePost = ({ post }) => {
           >
             <FaEdit />
           </div>
-          <Link to={`${post?.link}`}> <FaLink className='text-blue-400' /></Link>
+          {<Link className={`${post?.link?.length > 5 ? 'block' : "hidden"}`} to={`${post?.link}`}>
+            <RiExternalLinkFill />
+          </Link>}
         </div>
       </div>
       <Link to={`${post?.postImage?.imageUrl}`}>
