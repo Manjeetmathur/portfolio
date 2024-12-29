@@ -8,8 +8,8 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    // origin: ["http://localhost:5173","https://your-port.onrender.com"],
-    origin: "https://your-port.onrender.com",
+    origin: ["http://localhost:5173","https://your-port.onrender.com"],
+    // origin: "https://your-port.onrender.com",
     credentials: true,
   })
 );
