@@ -263,7 +263,6 @@ const Template1 = () => {
                     <input
                       type="text"
                       id="subject"
-                      value={subject}
                       placeholder="Subject"
                       className="w-full p-3 border border-gray-700 rounded bg-gray-00 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
@@ -280,8 +279,8 @@ const Template1 = () => {
                     ></textarea>
                   </div>
                   <a
-                    href={`mailto:${userDetails?.email}?subject=${encodeURIComponent(subject)}&body=${message}`}
-                    className="w-full bg-blue-700 text-white py-3 rounded hover:bg-blue-900 transition"
+                  href={`mailto:${userDetails?.email}`}
+                    className="flex justify-center w-full bg-blue-700 text-white py-3 rounded hover:bg-blue-900 transition"
                   >
                     Send Message
                   </a>

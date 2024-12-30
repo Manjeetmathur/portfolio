@@ -19,9 +19,9 @@ import Temp1Header from "../Template1/Temp1Header";
 const Template3 = () => {
        const [userDetails, setUser] = useState();
 
-  const postRef = useRef()
-  const blogRef = useRef()
-  const contactRef = useRef()
+       const postRef = useRef()
+       const blogRef = useRef()
+       const contactRef = useRef()
        const id = useParams();
        console.log(id);
        useEffect(() => {
@@ -64,15 +64,15 @@ const Template3 = () => {
        const openWhatsapp = () => {
               window.open(`https://wa.me/${userDetails?.phonenumber}`)
        }
-       const showPdf =() => {
+       const showPdf = () => {
               window.open(`${url}/f/${userDetails?.resume}`)
-            }
+       }
        return (
               <div className="">
-                     
-                     <Temp1Header postRef={postRef} blogRef={blogRef} contactRef={contactRef} 
+
+                     <Temp1Header postRef={postRef} blogRef={blogRef} contactRef={contactRef}
                             color="bg-gradient-to-r from-gray-900 via-blue-950  to-gray-800 text-white" />
-                     
+
                      <div
                             className="bg-gray-950   md:pb-20 md:flex
        justify-center items-center flex-row-reverse lg:p-36"
@@ -106,7 +106,7 @@ const Template3 = () => {
                                           </h3>
                                           <div className="mt-6">
                                                  <button
-                                                        onClick={() => showPdf(userDetails?.resume)} 
+                                                        onClick={() => showPdf(userDetails?.resume)}
                                                         className="text-sm lg:text-lg px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white rounded-full shadow-md hover:bg-blue-600 hover:border-blue-600 transition-colors duration-300"
                                                  >
                                                         See My Resume
@@ -164,13 +164,20 @@ const Template3 = () => {
                                    >
                                           WhatsApp Now
                                    </button>
+                                   <a
+                                          href={`mailto:${userDetails?.email}`}
+                                          className="flex justify-center bg-blue-700 text-white py-3 rounded hover:bg-blue-900 transition"
+                                   >
+                                          Send Message
+                                   </a>
+
                             </div>
                      </div>
 
                      <div className="bg-gray-900 flex flex-col justify-center items-center border-b-" ref={postRef}>
                             <h2 className="text-4xl font-bold text-white py-4 text-center md:text-right">My Projects</h2>
                             <div className="">
-                                   
+
                                    {userDetails?.posts?.map((item) => {
                                           return <Template3Posts post={item} key={item._id}></Template3Posts>;
                                    })}
