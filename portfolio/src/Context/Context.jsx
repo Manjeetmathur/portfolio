@@ -571,7 +571,7 @@ const ContextProvider = ({ children }) => {
        };
 
        const showPdf = (resume) => {
-              window.open(`http://localhost:8000/f/${resume}`)
+              window.open(`${url}/f/${resume}`)
        }
 
 
