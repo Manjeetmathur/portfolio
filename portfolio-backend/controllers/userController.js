@@ -68,9 +68,7 @@ const login = async (req, res) => {
       userId: user._id,
     };
 
-    const token = jwt.sign(tokenData, process.env.TOKEN_SECRET_KEY, {
-      expiresIn: "1d",
-    });
+    const token = jwt.sign(tokenData, process.env.TOKEN_SECRET_KEY);
 
     const options = {
       httpOnly: true,
@@ -184,24 +182,25 @@ const updateResume = async (req, res) => {
         success: false,
       })
     }
-    const resumefilePath = req.file?.path
+    // const resumefilePath = req.file?.path
 
-    if (!resumefilePath) {
+    // if (!resumefilePath) {
+    //   throw new Error("file missing")
+    // }
+    console.log(req.file);
+    
+    const resume = req.file.filename
+
+    if (!resume) {
       throw new Error("file missing")
     }
-
-    const profile = await uploadOnCloudinary(resumefilePath)
-
-    if (!profile) {
-      throw new Error("file missing")
-    }
-
+    console.log(resume);
+    
     await User.findByIdAndUpdate(
       userId,
       {
         $set: {
-          "resume.imageUrl": profile?.url,
-          "resume.publicId": profile?.public_id,
+          resume
         },
 
       }, {

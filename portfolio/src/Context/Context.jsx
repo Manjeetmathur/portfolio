@@ -100,6 +100,7 @@ const ContextProvider = ({ children }) => {
               }
        };
        const updateResume = async (resume) => {
+
               const formData = new FormData();
               formData.append("resume", resume);
               try {
@@ -169,9 +170,7 @@ const ContextProvider = ({ children }) => {
                      }
               } catch (error) {
                      toast.error(error.message);
-              } finally {
-                     setLoading(false);
-              }
+              } 
        };
        const updateDesc = async (desc) => {
               try {
@@ -571,14 +570,16 @@ const ContextProvider = ({ children }) => {
               }
        };
 
-
+       const showPdf = (resume) => {
+              window.open(`http://localhost:8000/f/${resume}`)
+       }
 
 
 
        return (
               <context.Provider
                      value={{
-                            uploadPost,uploadBlog,
+                            uploadPost,uploadBlog,showPdf,
                             updateTitle, updateProfile,
                             updateDesc, updatePhone, updateResume,
                             updateName, updateEmail, updateProfession,

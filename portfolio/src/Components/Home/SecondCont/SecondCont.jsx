@@ -34,11 +34,15 @@ const SecondCont = () => {
                      once: false, // Run animation only once
               });
        }, []);
+       
+  console.log(resume);
+  
 
 
 
        return (
               <div className="bg-gradient-to-r from-black via-gray-800 to-black py-10 md:py-20 lg:py-28">
+                    
                      <div className="flex justify-center items-center flex-col text-white mx-auto w-full max-w-4xl px-4 md:px-8 lg:px-16">
                             {/* Profile Image Section */}
                             <div className="flex flex-col gap-6 mb-8" data-aos="fade-up">
@@ -69,7 +73,6 @@ const SecondCont = () => {
                                           </button>
                                    </div>
                             </div>
-
                             {/* Work Title Section */}
                             <div className="flex flex-col gap-6 mb-8" data-aos="fade-up">
                                    <h1 className="text-[3vw] md:text-xl lg:text-2xl">Work Title</h1>
@@ -96,6 +99,7 @@ const SecondCont = () => {
                                    <input
                                           type="file"
                                           ref={ref1}
+                                          accept="application/pdf"
                                           className="hidden h-[6vw] md:h-[8vh] lg:h-[6vh] outline-none border-2 border-white bg-transparent shadow-md shadow-white text-[4vw] md:text-[20px] lg:text-[18px] w-[60vw] lg:w-[40vw] rounded-lg py-2 px-2 mb-4"
                                           onChange={(e) => setResume(e.target.files?.[0])}
                                    />

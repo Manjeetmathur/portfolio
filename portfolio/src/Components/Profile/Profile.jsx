@@ -41,10 +41,12 @@ const Profile = () => {
 
   const {
     updateName, updateEmail, updatePhone, updateProfile,
-    updateTitle, updateDesc, updateResume, updateProfession,
+    updateTitle, updateDesc, updateResume, updateProfession,showPdf,
     updateFace, updateGit, updateInsta, updateLinked, uploadPost, uploadBlog
   } = useContext(context)
   console.log(name);
+
+  
 
 
   return (
@@ -52,33 +54,40 @@ const Profile = () => {
       <Header />
       <div className="bg-gradient-to-l max-w-full mx-auto p-6 space-y-8 from-gray-950 via-gray-900 to-gray-950 text-gray-100 bg-pattern-checkerboard ">
         {/* Profile Section */}
-        <div className="relative flex items-center space-x-6 p-6 bg-gray-800 shadow-lg rounded-lg transition-transform transform ">
+        <div className="relative flex items-center space-x-6 p-6 bg-gray-800 
+        shadow-lg rounded-lg transition-transform transform ">
           <img
             src={userDetails?.profile?.imageUrl}
             alt="Profile"
-            className="w-24 h-24 rounded-full object-cover border-4 border-blue-500"
+            className="w-16 h-16 rounded-full object-cover border-2"
           />
           <div>
-            <h2 className="text-2xl font-bold">{userDetails?.name}</h2>
-            <p className="text-gray-400">{userDetails?.email}</p>
-            <p className="text-gray-400">{userDetails?.phonenumber}</p>
+            <h2 className="text-sm font-bold">{userDetails?.name}</h2>
+            <p className="text-[10px] text-gray-400">{userDetails?.email}</p>
+            <p className="text-sm text-gray-400">{userDetails?.phonenumber}</p>
             {/* <p className="text-gray-400">{userDetails?.profession}</p> */}
           </div>
           <div
             className="absolute top-4 right-4 text-2xl text-gray-300 hover:text-blue-400 cursor-pointer"
             onClick={() => setEditSec("sec1")}
           >
-            <FaEdit />
+            <FaEdit className='p-1'/>
           </div>
         </div>
 
         {/* Resume Section */}
-        <div className="relative flex flex-col md:flex-row items-center gap-6 p-6 bg-gray-800 shadow-lg rounded-lg transition-transform transform">
-          <img
+        <div className="relative flex flex-col md:flex-row items-center 
+          gap-6 p-6 bg-gray-800 shadow-lg rounded-lg transition-transform transform">
+          {/* <img
             src={userDetails?.resume?.imageUrl}
             alt="Resume"
-            className="w-32 h-32 object-cover border rounded-lg"
+            className="w-32 h-32 object-cover rounded-lg"
           />
+           */}
+           
+           <button onClick={() => showPdf(userDetails?.resume)} 
+              className="px-2 py-1 border-2 rounded-lg bg-blue-800"
+            >Show Resume</button>
           <div>
             <h3 className="text-lg font-semibold">{userDetails?.title} ({userDetails?.profession})</h3>
             <p className="text-gray-400 mb-2">{userDetails?.description}</p>
@@ -101,7 +110,7 @@ const Profile = () => {
             className="absolute top-4 right-4 text-2xl text-gray-300 hover:text-blue-400 cursor-pointer"
             onClick={() => setEditSec("sec2")}
           >
-            <FaEdit />
+            <FaEdit className='p-1'/>
           </div>
         </div>
 
@@ -226,7 +235,7 @@ const Profile = () => {
                   <button onClick={() => {
                     updateName(name)
                     setName("")
-                  }}><TiTick className="text-2xl" />  </button>
+                  }}><TiTick className="text-2xl hover:text-gray-400" />  </button>
                 </div>
                 <div className="mb-4 flex gap-3">
                   {/* <label className="block text-gray-400">Email</label> */}
@@ -240,7 +249,7 @@ const Profile = () => {
                   <button onClick={() => {
                     updateEmail(email)
                     setEmail('')
-                  }}><TiTick className="text-2xl" /></button>
+                  }}><TiTick className="text-2xl hover:text-gray-400" /></button>
                 </div>
                 <div className="mb-4 flex gap-3">
                   {/* <label className="block text-gray-400">Email</label> */}
@@ -254,7 +263,7 @@ const Profile = () => {
                   <button onClick={() => {
                     updatePhone(phoneNumber)
                     setPhoneNumber('')
-                  }}><TiTick className="text-2xl" /></button>
+                  }}><TiTick className="text-2xl hover:text-gray-400" /></button>
                 </div>
                 <div className="mb-4 flex gap-3" >
                   {/* <label className="block text-gray-400">Profile Picture</label> */}
@@ -273,7 +282,7 @@ const Profile = () => {
                   <button onClick={() => {
                     updateProfile(profile)
                     setProfile('')
-                  }}><TiTick className="text-2xl" /></button>
+                  }}><TiTick className="text-2xl hover:text-gray-400" /></button>
                 </div>
               </div>
             </div>
@@ -302,7 +311,7 @@ const Profile = () => {
                   <button onClick={() => {
                     updateTitle(title)
                     setTitle('')
-                  }} ><TiTick className="text-2xl" /></button>
+                  }} ><TiTick className="text-2xl hover:text-gray-400" /></button>
                 </div>
                 <div className="mb-4 flex gap-3">
                   {/* <label className="block text-gray-400">Title</label> */}
@@ -316,11 +325,12 @@ const Profile = () => {
                   <button onClick={() => {
                     updateProfession(profession)
                     setProfession('')
-                  }} ><TiTick className="text-2xl" /></button>
+                    // window.location.reload()
+                  }} ><TiTick className="text-2xl hover:text-gray-400" /></button>
                 </div>
                 <div className="mb-4 flex gap-3">
                   {/* <label className="block text-gray-400">Project Description</label> */}
-                  <input
+                  <textarea
                     type="text"
                     className="block w-[50vw] border rounded-lg p- bg-gray-700 text-gray-100 px-1"
                     placeholder="Description . . ."
@@ -330,7 +340,7 @@ const Profile = () => {
                   <button onClick={() => {
                     updateDesc(desc)
                     setDesc('')
-                  }} ><TiTick className="text-2xl" /></button>
+                  }} ><TiTick className="text-2xl hover:text-gray-400" /></button>
 
                 </div>
                 <div className="mb-4 flex gap-3">
@@ -339,6 +349,7 @@ const Profile = () => {
                     type="file"
                     ref={ref}
                     className="hidden"
+                    accept = 'application/pdf'
                     onChange={(e) => setResume(e.target.files?.[0])}
                   />
                   <button
@@ -350,7 +361,7 @@ const Profile = () => {
                   <button onClick={() => {
                     updateResume(resume)
                     setResume('')
-                  }} ><TiTick className="text-2xl" /> </button>
+                  }} ><TiTick className="text-2xl hover:text-gray-400" /> </button>
                 </div>
                 <div className="mb-4 flex gap-3">
                   {/* <label className="block text-gray-400">LinkedIn </label> */}
@@ -364,7 +375,7 @@ const Profile = () => {
                   <button onClick={() => {
                     updateLinked(linked)
                     setLinked('')
-                  }} ><TiTick className="text-2xl" /></button>
+                  }} ><TiTick className="text-2xl hover:text-gray-400" /></button>
                 </div>
                 <div className="mb-4 flex gap-3">
                   {/* <label className="block text-gray-400">Project Description</label> */}
@@ -378,7 +389,7 @@ const Profile = () => {
                   <button onClick={() => {
                     updateGit(git)
                     setGit('')
-                  }} > <TiTick className="text-2xl" /></button>
+                  }} > <TiTick className="text-2xl hover:text-gray-400" /></button>
                 </div>
                 <div className="mb-4 flex gap-3">
                   {/* <label className="block text-gray-400">Project Description</label> */}
@@ -393,7 +404,7 @@ const Profile = () => {
                   <button onClick={() => {
                     updateInsta(insta)
                     setInsta('')
-                  }} ><TiTick className="text-2xl" /></button>
+                  }} ><TiTick className="text-2xl hover:text-gray-400" /></button>
                 </div>
                 <div className="mb-4 flex gap-3">
                   {/* <label className="block text-gray-400">Project Description</label> */}
@@ -405,9 +416,9 @@ const Profile = () => {
                     onChange={(e) => setFace(e.target.value)}
                   />
                   <button onClick={() => {
-                    updateFace('')
+                    updateFace(face)
                     setFace('')
-                  }} ><TiTick className="text-2xl" /></button>
+                  }} ><TiTick className="text-2xl hover:text-gray-400" /></button>
                 </div>
 
               </div>

@@ -17,7 +17,7 @@ const ProfileBlogs = ({ blog }) => {
                                    className="absolute top-2 right-4 text-2xl text-gray-300 hover:text-blue-400 cursor-pointer"
                                    onClick={() => setEditSec(true)}
                             >
-                                   <FaEdit />
+                                   <FaEdit className='p-1'/>
                             </div>
                      </div>
                      <p>{blog.content}</p>

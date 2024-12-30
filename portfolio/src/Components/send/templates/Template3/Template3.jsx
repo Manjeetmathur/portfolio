@@ -64,6 +64,9 @@ const Template3 = () => {
        const openWhatsapp = () => {
               window.open(`https://wa.me/${userDetails?.phonenumber}`)
        }
+       const showPdf =() => {
+              window.open(`${url}/f/${userDetails?.resume}`)
+            }
        return (
               <div className="">
                      
@@ -102,12 +105,12 @@ const Template3 = () => {
                                                  {userDetails?.title}
                                           </h3>
                                           <div className="mt-6">
-                                                 <Link
-                                                        to={`/resume`}
+                                                 <button
+                                                        onClick={() => showPdf(userDetails?.resume)} 
                                                         className="text-sm lg:text-lg px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white rounded-full shadow-md hover:bg-blue-600 hover:border-blue-600 transition-colors duration-300"
                                                  >
                                                         See My Resume
-                                                 </Link>
+                                                 </button>
                                           </div>
                                    </div>
 

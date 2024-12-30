@@ -47,11 +47,10 @@ const Template1 = () => {
   }, [])
   console.log(userDetails);
 
-  const link = window.location.href
+  // const link = window.location.href
 
-  const Openlink = async () => {
-    await navigator.clipboard.writeText(link)
-    toast('link copied')
+  const showPdf =() => {
+    window.open(`${url}/f/${userDetails?.resume}`)
   }
   return (
     <div className="">
@@ -102,7 +101,7 @@ const Template1 = () => {
                 <FaGithub className="text-3xl lg:text-4xl border-2 p-1 rounded-xl hover:shadow-md" />
               </a>
               <a
-                href={userDetails?.instalink}
+                href={userDetails?.instagramlink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-pink-500"
@@ -121,12 +120,12 @@ const Template1 = () => {
 
             {/* Resume Button */}
             <div className="mt-6">
-              <Link
-                to={`/resume`}
+              <button
+                onClick={() => showPdf(userDetails?.resume)} 
                 className="text-sm lg:text-xl border-2 px-4 py-2 rounded-xl text-gray-700 font-semibold hover:bg-gray-100 hover:shadow-md"
               >
                 See My Resume
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -264,6 +263,7 @@ const Template1 = () => {
                     <input
                       type="text"
                       id="subject"
+                      value={subject}
                       placeholder="Subject"
                       className="w-full p-3 border border-gray-700 rounded bg-gray-00 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
@@ -279,12 +279,12 @@ const Template1 = () => {
                       className="w-full p-3 border border-gray-700 rounded bg-gray-00 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     ></textarea>
                   </div>
-                  <button
-                    type="submit"
+                  <a
+                    href={`mailto:${userDetails?.email}?subject=${encodeURIComponent(subject)}&body=${message}`}
                     className="w-full bg-blue-700 text-white py-3 rounded hover:bg-blue-900 transition"
                   >
                     Send Message
-                  </button>
+                  </a>
                 </form>
               </div>
             </div>

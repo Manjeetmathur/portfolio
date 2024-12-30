@@ -22,17 +22,14 @@ const ProfilePost = ({ post }) => {
   return (
     <div className='border-y-2 my-3 py-2'>
       <div className="flex relative  items-center  gap-4">
-        <h4 className="text-lg font-bold mb-2">{post.postTitle}</h4>
-        <div className="flex">
+        <h4 className="text-lg font-bold mb-2 mr-4">{post.postTitle}  {<Link className={`${post?.link?.length > 5 ? 'block' : "hidden"}`} to={`${post?.link}`}>
+            <RiExternalLinkFill />
+          </Link>}</h4>
           <div
-            className="absolute top-2 right-4 text-2xl text-gray-300 hover:text-blue-400 cursor-pointer"
+            className="absolute top-0 right-0  text-2xl text-gray-300 hover:text-blue-400 cursor-pointer"
             onClick={() => setEditSec(true)}
           >
-            <FaEdit />
-          </div>
-          {<Link className={`${post?.link?.length > 5 ? 'block' : "hidden"}`} to={`${post?.link}`}>
-            <RiExternalLinkFill />
-          </Link>}
+            <FaEdit className='p-1'/>         
         </div>
       </div>
       <Link to={`${post?.postImage?.imageUrl}`}>
@@ -69,7 +66,7 @@ const ProfilePost = ({ post }) => {
                 <button onClick={() => {
                   updatePostTitle(title, id)
                   setpostTitle('')
-                }}><TiTick className='text-2xl' /></button>
+                }}><TiTick className='text-2xl hover:text-gray-400' /></button>
               </div>
               <div className="mb-4 flex gap-3">
                 {/* <label className="block text-gray-400">Email</label> */}
@@ -83,7 +80,7 @@ const ProfilePost = ({ post }) => {
                 <button onClick={() => {
                   updatePostDesc(desc, id)
                   setpostDesc('')
-                }}><TiTick className='text-2xl' /></button>
+                }}><TiTick className='text-2xl hover:text-gray-400' /></button>
               </div>
               <div className="mb-4 flex gap-3">
                 {/* <label className="block text-gray-400">Email</label> */}
@@ -97,7 +94,7 @@ const ProfilePost = ({ post }) => {
                 <button onClick={() => {
                   updatePostLink(link, id)
                   setPostLink('')
-                }}><TiTick className='text-2xl' /></button>
+                }}><TiTick className='text-2xl hover:text-gray-400' /></button>
               </div>
               <div className="mb-4 flex gap-3" >
                 {/* <label className="block text-gray-400">Profile Picture</label> */}
@@ -116,7 +113,7 @@ const ProfilePost = ({ post }) => {
                 <button onClick={() => {
                   updatePostImage(postImage, id)
                   setPostImage('')
-                }}><TiTick className='text-2xl' /></button>
+                }}><TiTick className='text-2xl hover:text-gray-400' /></button>
               </div>
             </div>
           </div>

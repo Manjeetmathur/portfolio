@@ -7,7 +7,7 @@ const Temp2Posts = ({ post }) => {
         text-white  mt-6 bg-gradient-to-r
         to-gray-800 rounded-lg shadow-lg p-6">
             {/* Image Section */}
-            <Link to={`${post.link}`} className="w-full md:w-[60%] lg:w-[50%]">
+            <Link target='_blank' to={`${post.link}`} className="w-full md:w-[60%] lg:w-[50%]">
                 <div className="flex justify-center mx-auto">
                     <img
                         src={`${post?.postImage?.imageUrl}`}
@@ -23,14 +23,9 @@ const Temp2Posts = ({ post }) => {
                 <h1 className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-4 lg:text-4xl">
                     {post.postTitle}
                 </h1>
-                <h2 className="text-lg text-center text-gray-300 mb-4 lg:text-xl">
+                <h2 className="text-lg text-center text-gray-300  lg:text-xl">
                     {post.postDescription}
                 </h2>
-                <Link to={`${post.link}`} className="mt-4">
-                    <button className="bg-blue-600 text-white text-lg font-semibold px-6 py-2 rounded-xl transition-colors duration-300 hover:bg-blue-700">
-                        Read More
-                    </button>
-                </Link>
             </div>
         </div>
 

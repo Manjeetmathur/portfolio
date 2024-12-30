@@ -45,14 +45,7 @@ const userSchema = mongoose.Schema({
               },
        },
        resume: {
-              imageUrl:{
-                     type:String,
-                       default : ''
-              },
-              publicId : {
-                     type:String,
-                       default : ''
-              },
+             type : String,
        },
        linkedinlink:{
               type:String,
