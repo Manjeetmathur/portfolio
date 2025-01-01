@@ -49,7 +49,7 @@ const Template1 = () => {
 
   // const link = window.location.href
 
-  const showPdf =() => {
+  const showPdf = () => {
     window.open(`${url}/f/${userDetails?.resume}`)
   }
   return (
